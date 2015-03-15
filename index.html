@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Validación con jQuery.validate</title>
+    <style>
+        h4 {
+            color: red;
+            padding-left: 5px;
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" action="result.aspx">
+        Nombre: <input name="txtNombre" type="text" id="txtNombre" /><br /><br />
+        Password: <input type="password" name="txtPwd" id="txtPwd" /><br /><br />
+        Edad: <input name="txtEdad" type="number" id="txtEdad" min="18" max="60" /><br /> <br />
+        Email: <input name="txtEmail" id="txtEmail" type="email" /><br /><br />
+        <br />
+        <div>
+            <input id="btn" type="button" value="Validar" />
+        </div>
+    </form>
+
+    <script src="Scripts/jquery-2.1.3.js"></script>
+    <script src="Scripts/jquery.validate.js"></script>
+    <script>
+    $(document).ready(function () {
+        $("#form1").validate();
+
+        $("#txtNombre").rules("add", {
+            required: true,
+            messages: {
+                required: "<h4>El campo nombre es obligatorio</h4>"
+            }
+        });
+
+        $("#txtPwd").rules("add", {
+            required: true,
+            minlength: 6,
+            messages: {
+                required: "<h4>El password no puede ser nulo.</h4>",
+                minlength: $.validator.format("<h4>El largo mínimo permitido es {0} caracteres.</h4>")
+            }
+        });
+
+        $("#txtEdad").rules("add", {
+            required: true,
+            min: 18,
+            messages: {
+                required: "<h4>Debe entrar una edad.</h4>",
+                min: $.validator.format("<h4>La edad mínima debe ser {0} años.</h4>"),
+                max: $.validator.format("<h4>La edad máxima debe ser {0} años.</h4>")
+            }
+        });
+
+        $("#txtEmail").rules("add", {
+            email: true,
+            messages: {
+                email:"<h4>Debe ingresar un email válido o dejarlo en blanco</h4>"
+            }
+        });
+
+        $('#btn').click(function () {
+            $("#form1").valid();
+            $("#form1").submit();
+        });
+      });
+    </script>
+</body>
+</html>

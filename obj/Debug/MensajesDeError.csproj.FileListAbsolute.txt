@@ -1,0 +1,6 @@
+c:\users\rspagnuolo\documents\visual studio 2013\Projects\MensajesDeError\bin\MensajesDeError.dll.config
+c:\users\rspagnuolo\documents\visual studio 2013\Projects\MensajesDeError\bin\MensajesDeError.dll
+c:\users\rspagnuolo\documents\visual studio 2013\Projects\MensajesDeError\bin\MensajesDeError.pdb
+c:\users\rspagnuolo\documents\visual studio 2013\Projects\MensajesDeError\obj\Debug\MensajesDeError.csprojResolveAssemblyReference.cache
+c:\users\rspagnuolo\documents\visual studio 2013\Projects\MensajesDeError\obj\Debug\MensajesDeError.dll
+c:\users\rspagnuolo\documents\visual studio 2013\Projects\MensajesDeError\obj\Debug\MensajesDeError.pdb
